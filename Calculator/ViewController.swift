@@ -9,6 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var leftOperand: Double?
+    var rightOperand: Double?
+    var op: Operator? = .none
+    @IBOutlet weak var resultLabel: UILabel!
+    var shouldResetResultLabel = true
+
+    // Enum 
     enum Operator: String {
         case Add
         case Subtract
@@ -22,11 +29,7 @@ class ViewController: UIViewController {
         resultLabel.text = "0"
     }
     
-    var leftOperand: Double?
-    var rightOperand: Double?
-    var op: Operator? = .none
-    @IBOutlet weak var resultLabel: UILabel!
-    var shouldResetResultLabel = true
+
 
     // Decimal point
     @IBAction func btnDot(_ sender: Any) {
@@ -248,5 +251,6 @@ class ViewController: UIViewController {
             leftOperand = Double(resultLabel.text!)
         }
     }
+
 }
 
